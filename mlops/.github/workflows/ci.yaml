@@ -1,9 +1,10 @@
-name: CI pipeline
+---
+name: CI Pipeline
 
-on: 
+on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   project_testing:
@@ -14,10 +15,9 @@ jobs:
 
       - name: Setup Python
         uses: actions/setup-python@v4
-        with: 
-          python-version: '3.10'
+        with:
+          python-version: "3.10"
 
-      
       - name: Install dependencies
         run: |
           pip install --upgrade pip
@@ -25,5 +25,4 @@ jobs:
           pip install dvc
 
       - name: Run DVC pipeline
-        run: |
-          dvc repro
+        run: dvc repro
