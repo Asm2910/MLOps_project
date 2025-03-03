@@ -3,7 +3,9 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches:
+      - "main"
+      - "master"
 
 jobs:
   project_testing:
@@ -25,5 +27,4 @@ jobs:
 
       - name: Run DVC pipeline
         run: |
-          dvc pull
           dvc repro
