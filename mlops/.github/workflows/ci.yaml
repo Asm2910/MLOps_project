@@ -1,11 +1,17 @@
 ---
 name: CI Pipeline
 
-on:
+on: 
   push:
-    branches:
-      - "main"
-      - "master"
+    paths:
+      - 'data/**'
+      - 'src/**'
+      - 'dvc.lock'
+      - 'dvc.yaml'
+      - '.dvcignore'
+      - 'requirements.txt'
+      - 'params.yaml'
+      - '.github/workflows/**'
 
 jobs:
   project_testing:
