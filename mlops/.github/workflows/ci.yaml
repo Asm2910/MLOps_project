@@ -1,7 +1,10 @@
 ---
 name: CI Pipeline
 
-"on": [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   project_testing:
